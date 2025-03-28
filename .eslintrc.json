@@ -35,6 +35,13 @@
 			"typescript": {
 				"project": "./tsconfig.json"
 			},
+			"babel-module": {
+				"alias": {
+					"@": "./",
+					"@assets": "./assets",
+					"@components": "./src/components"
+				}
+			},
 			"node": {
 				"extensions": [".js", ".jsx", ".ts", ".tsx"],
 				"paths": ["."]
