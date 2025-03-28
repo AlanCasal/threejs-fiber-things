@@ -34,3 +34,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# code workspace
+threejs-fiber-things.code-workspace
