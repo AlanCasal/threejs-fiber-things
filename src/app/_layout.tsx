@@ -1,14 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Stack } from 'expo-router';
 import '@/global.css';
 
-export default function RootLayout() {
-	return (
-		<Stack>
-			<Stack.Screen
-				name='index'
-				options={{ headerShown: false }}
-			/>
-		</Stack>
-	);
-}
+const RootLayout = () => <Stack screenOptions={{ headerShown: false }} />;
+
+export default RootLayout;

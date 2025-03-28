@@ -1,7 +1,5 @@
-import Starlink from '@components/Starlink';
+import { Redirect } from 'expo-router';
 
-const Index = () => {
-	return <Starlink />;
-};
+const Index = () => <Redirect href='/home' />;
 
 export default Index;
