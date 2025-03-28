@@ -1,18 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line no-undef
 module.exports = {
-	content: ['./app/**/*.{js,jsx,ts,tsx}', './App.tsx'],
+	content: [
+		'./src/app/**/*.{js,jsx,ts,tsx}',
+		'./src/screens/**/*.{js,jsx,ts,tsx}',
+		'./src/components/**/*.{js,jsx,ts,tsx}',
+	],
 	presets: [require('nativewind/preset')],
 	theme: {
 		extend: {
 			fontFamily: {
-				Jakarta: ['Jakarta', 'sans-serif'],
-				JakartaBold: ['Jakarta-Bold', 'sans-serif'],
-				JakartaExtraBold: ['Jakarta-ExtraBold', 'sans-serif'],
-				JakartaExtraLight: ['Jakarta-ExtraLight', 'sans-serif'],
-				JakartaLight: ['Jakarta-Light', 'sans-serif'],
-				JakartaMedium: ['Jakarta-Medium', 'sans-serif'],
-				JakartaSemiBold: ['Jakarta-SemiBold', 'sans-serif'],
+				// Jakarta: ['Jakarta', 'sans-serif'],
+				// JakartaBold: ['Jakarta-Bold', 'sans-serif'],
+				// JakartaExtraBold: ['Jakarta-ExtraBold', 'sans-serif'],
+				// JakartaExtraLight: ['Jakarta-ExtraLight', 'sans-serif'],
+				// JakartaLight: ['Jakarta-Light', 'sans-serif'],
+				// JakartaMedium: ['Jakarta-Medium', 'sans-serif'],
+				// JakartaSemiBold: ['Jakarta-SemiBold', 'sans-serif'],
 			},
 			colors: {
 				primary: {
