@@ -9,10 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-three/drei": "9",
+    "@react-three/fiber": "8",
+    "@shopify/react-native-skia": "1.5.0",
     "expo": "~52.0.41",
+    "expo-gl": "~15.0.4",
     "expo-status-bar": "~2.0.1",
+    "r3f-native-orbitcontrols": "^1.0.12",
     "react": "18.3.1",
-    "react-native": "0.76.7"
+    "react-native": "0.76.7",
+    "react-native-reanimated": "~3.16.1",
+    "three": "^0.174.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
