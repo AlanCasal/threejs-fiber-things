@@ -9,6 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import useControls from 'r3f-native-orbitcontrols';
 import Trigger from '@components/Trigger';
 import Loader from '@components/Loader';
+import Gradient from '@components/Gradient';
 
 const LIGHT_POSITION = {
 	right: {
@@ -89,6 +90,8 @@ const Starlink = () => {
 				className='flex-1'
 				{...event}
 			>
+				<Gradient />
+
 				{isLoading && <Loader />}
 
 				<Canvas>
