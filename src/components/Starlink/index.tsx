@@ -94,7 +94,9 @@ const Starlink = () => {
 
 				{isLoading && <Loader />}
 
-				<Canvas>
+				<Canvas
+					gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
+				>
 					<OrbitControls
 						enableZoom={false}
 						enablePan={false}
