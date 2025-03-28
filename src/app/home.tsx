@@ -1,4 +1,4 @@
-import Button from '@components/Button';
+import Button from '@components/common/Button';
 import { router } from 'expo-router';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,7 +12,7 @@ const home = () => {
 
 			<View className='flex-1 gap-5'>
 				<Button
-					handlePress={() => router.push('/starlink')}
+					handlePress={() => router.push('/(models)/starlink')}
 					text='Starlink'
 					className='bg-primary-300'
 				/>
