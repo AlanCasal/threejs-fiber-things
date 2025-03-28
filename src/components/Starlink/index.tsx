@@ -1,12 +1,14 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import StarlinkModel from './model';
+import StarlinkModel from './StarlinkModel';
 
 // 3d stuff
 import { Canvas } from '@react-three/fiber';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import useControls from 'r3f-native-orbitcontrols';
+import Trigger from '@components/Trigger';
+import Loader from '@components/Loader';
 
 const LIGHT_POSITION = {
 	right: {
@@ -68,6 +70,7 @@ const Lights = () => {
 
 const Starlink = () => {
 	const [OrbitControls, event] = useControls();
+	const [isLoading, setIsLoading] = useState(false);
 
 	return (
 		<SafeAreaView className='flex-1 bg-black p-5'>
@@ -86,13 +89,15 @@ const Starlink = () => {
 				className='flex-1'
 				{...event}
 			>
+				{isLoading && <Loader />}
+
 				<Canvas>
 					<OrbitControls
 						enableZoom={false}
 						enablePan={false}
 					/>
 					<Lights />
-					<Suspense>
+					<Suspense fallback={<Trigger setIsLoading={setIsLoading} />}>
 						<StarlinkModel />
 					</Suspense>
 				</Canvas>
