@@ -23,12 +23,13 @@ type GLTFResult = GLTF & {
 
 // type ActionName = 'COMPOUND.001Action';
 
-export function Starlink(props: JSX.IntrinsicElements['group']) {
+const Starlink = (props: JSX.IntrinsicElements['group']) => {
 	const group = useRef<THREE.Group>(null);
 	const { nodes, materials, animations } = useGLTF(
 		require('@/assets/models/Starlink.glb')
 	) as GLTFResult;
 	const { actions } = useAnimations(animations, group);
+
 	return (
 		<group
 			ref={group}
@@ -83,6 +84,8 @@ export function Starlink(props: JSX.IntrinsicElements['group']) {
 			</group>
 		</group>
 	);
-}
+};
+
+export default Starlink;
 
 useGLTF.preload('/Starlink.glb');
