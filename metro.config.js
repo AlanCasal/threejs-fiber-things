@@ -1,16 +1,23 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
+const { withNativeWind } = require('nativewind/metro');
 
-module.exports = (() => {
-	const config = getDefaultConfig(__dirname);
+const config = getDefaultConfig(__dirname);
+const { resolver } = config;
 
-	const { resolver } = config;
+config.resolver = {
+	...resolver,
+	assetExts: [...resolver.assetExts, 'glb', 'gltf', 'png', 'jpg'],
+	sourceExts: [
+		...resolver.sourceExts,
+		'js',
+		'jsx',
+		'json',
+		'ts',
+		'tsx',
+		'cjs',
+		'mjs',
+	],
+};
 
-	config.resolver = {
-		...resolver,
-		assetExts: [...resolver.assetExts, 'glb', 'gltf', 'png', 'jpg'],
-		sourceExts: [...resolver.sourceExts, 'js', 'jsx', 'json', 'ts', 'tsx', 'cjs', 'mjs'],
-	};
-
-	return config;
-})();
+module.exports = withNativeWind(config, { input: './global.css' });
