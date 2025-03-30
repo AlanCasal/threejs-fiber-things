@@ -1,0 +1,51 @@
+/* eslint-disable react/no-unknown-property */
+import { View, Text } from 'react-native';
+import BackButton from '@components/common/BackButton';
+import { Canvas } from '@react-three/fiber';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+type LayoutAProps = {
+	statusBarStyle?: 'dark' | 'light';
+	backButtonColor?: 'black' | 'white';
+	children: React.ReactNode;
+	bottomTitle?: string;
+	bottomTitleColor?: 'black' | 'white';
+};
+
+const LayoutA = ({
+	children,
+	statusBarStyle = 'dark',
+	backButtonColor = 'white',
+	bottomTitle = '',
+	bottomTitleColor = 'white',
+}: LayoutAProps) => {
+	return (
+		<SafeAreaView className='flex-1 p-5 bg-dark-800'>
+			<StatusBar style={statusBarStyle} />
+
+			<BackButton
+				size={40}
+				color={backButtonColor}
+			/>
+
+			<View className='flex-1'>
+				<Canvas
+					gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
+				>
+					{children}
+				</Canvas>
+			</View>
+
+			<View className='my-5'>
+				<Text
+					className={`text-center font-bold text-2xl text-${bottomTitleColor}`}
+				>
+					{bottomTitle}
+				</Text>
+			</View>
+		</SafeAreaView>
+	);
+};
+
+export default LayoutA;
