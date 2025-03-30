@@ -3,7 +3,26 @@ import { router } from 'expo-router';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const home = () => {
+type ButtonType = {
+	handlePress: () => void;
+	text: string;
+	className: NativeWindStyleProp;
+};
+
+const BUTTONS: ButtonType[] = [
+	{
+		handlePress: () => router.push('/(models)/geometry'),
+		text: 'Simple geometry',
+		className: 'bg-primary-400',
+	},
+	{
+		handlePress: () => router.push('/(models)/starlink'),
+		text: 'Starlink',
+		className: 'bg-primary-300',
+	},
+];
+
+const Home = () => {
 	return (
 		<SafeAreaView className='flex-1 bg-dark-800 p-5 pt-10'>
 			<Text className='text-white text-2xl font-bold text-center mb-10'>
@@ -11,14 +30,17 @@ const home = () => {
 			</Text>
 
 			<View className='flex-1 gap-5'>
-				<Button
-					handlePress={() => router.push('/(models)/starlink')}
-					text='Starlink'
-					className='bg-primary-300'
-				/>
+				{BUTTONS.map(button => (
+					<Button
+						key={button.text}
+						handlePress={button.handlePress}
+						text={button.text}
+						className={button.className}
+					/>
+				))}
 			</View>
 		</SafeAreaView>
 	);
 };
 
-export default home;
+export default Home;
