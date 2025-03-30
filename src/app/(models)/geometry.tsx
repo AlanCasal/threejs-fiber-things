@@ -30,7 +30,7 @@ const Box = (props: MeshProps) => {
 const Geometry = () => {
 	return (
 		<LayoutA
-			bottomTitle='Simple geometry with ThreeJS'
+			bottomTitle='👆🏼 Tap a box !'
 			bottomTitleColor='white'
 			statusBarStyle='light'
 		>

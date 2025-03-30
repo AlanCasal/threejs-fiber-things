@@ -17,6 +17,7 @@ type LayoutOrbitControlsProps = {
 	bottomTitle?: string;
 	bottomTitleColor: 'black' | 'white';
 	children: React.ReactNode;
+	bottomDescription?: string;
 };
 
 const LayoutOrbitControls = ({
@@ -24,6 +25,7 @@ const LayoutOrbitControls = ({
 	bottomTitle = '',
 	bottomTitleColor = 'white',
 	children,
+	bottomDescription = '',
 }: LayoutOrbitControlsProps) => {
 	const [OrbitControls, event] = useControls();
 	const [isLoading, setIsLoading] = useState(false);
@@ -58,12 +60,19 @@ const LayoutOrbitControls = ({
 				</Canvas>
 			</View>
 
-			<View className='my-5'>
+			<View className='my-5 gap-4'>
 				<Text
 					className={`text-center font-bold text-3xl text-${bottomTitleColor}`}
 				>
 					{bottomTitle}
 				</Text>
+				{bottomDescription && (
+					<Text
+						className={`text-center font-bold text-xl text-${bottomTitleColor}`}
+					>
+						{bottomDescription}
+					</Text>
+				)}
 			</View>
 		</SafeAreaView>
 	);

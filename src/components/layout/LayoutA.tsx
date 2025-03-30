@@ -11,6 +11,7 @@ type LayoutAProps = {
 	children: React.ReactNode;
 	bottomTitle?: string;
 	bottomTitleColor?: 'black' | 'white';
+	bottomDescription?: string;
 };
 
 const LayoutA = ({
@@ -19,6 +20,7 @@ const LayoutA = ({
 	backButtonColor = 'white',
 	bottomTitle = '',
 	bottomTitleColor = 'white',
+	bottomDescription = '',
 }: LayoutAProps) => {
 	return (
 		<SafeAreaView className='flex-1 p-5 bg-dark-800'>
@@ -37,12 +39,19 @@ const LayoutA = ({
 				</Canvas>
 			</View>
 
-			<View className='my-5'>
+			<View className='my-5 gap-4'>
 				<Text
-					className={`text-center font-bold text-2xl text-${bottomTitleColor}`}
+					className={`text-center font-bold text-3xl text-${bottomTitleColor}`}
 				>
 					{bottomTitle}
 				</Text>
+				{bottomDescription && (
+					<Text
+						className={`text-center font-bold text-xl text-${bottomTitleColor}`}
+					>
+						{bottomDescription}
+					</Text>
+				)}
 			</View>
 		</SafeAreaView>
 	);
