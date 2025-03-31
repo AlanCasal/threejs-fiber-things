@@ -10,7 +10,7 @@ import { GLTF } from 'three-stdlib';
 import { useSharedValue } from 'react-native-reanimated';
 import { useFrame } from '@react-three/fiber/native';
 
-const StarlinkModel = require('@/assets/models/Starlink.glb');
+const StarlinkModel = require('./Starlink.glb');
 
 type GLTFResult = GLTF & {
 	nodes: {
