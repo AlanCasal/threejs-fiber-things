@@ -38,7 +38,6 @@
 			"babel-module": {
 				"alias": {
 					"@": "./",
-					"@assets": "./assets",
 					"@components": "./src/components"
 				}
 			},

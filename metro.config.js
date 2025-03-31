@@ -7,7 +7,7 @@ const { resolver } = config;
 
 config.resolver = {
 	...resolver,
-	assetExts: [...resolver.assetExts, 'glb', 'gltf', 'png', 'jpg'],
+	assetExts: [...resolver.assetExts, 'glb', 'gltf', 'png', 'jpg', 'obj', 'mtl'],
 	sourceExts: [
 		...resolver.sourceExts,
 		'js',

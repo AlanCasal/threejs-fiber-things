@@ -13,12 +13,17 @@ const BUTTONS: ButtonType[] = [
 	{
 		handlePress: () => router.push('/(models)/geometry'),
 		text: 'Simple geometry',
-		className: 'bg-primary-400',
+		className: 'bg-primary-500',
 	},
 	{
 		handlePress: () => router.push('/(models)/starlink'),
 		text: 'Starlink',
-		className: 'bg-primary-300',
+		className: 'bg-primary-600',
+	},
+	{
+		handlePress: () => router.push('/(models)/shoe'),
+		text: 'Shoe',
+		className: 'bg-primary-700',
 	},
 ];
 

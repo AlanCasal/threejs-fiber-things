@@ -1,4 +1,3 @@
-import { Suspense, useState } from 'react';
 import { Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -6,7 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Canvas } from '@react-three/fiber';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import useControls from 'r3f-native-orbitcontrols';
-import Trigger from '@components/Trigger';
 import Loader from '@components/common/Loader';
 import Gradient from '@components/Gradient';
 import BackButton from '@components/common/BackButton';
@@ -18,6 +16,7 @@ type LayoutOrbitControlsProps = {
 	bottomTitleColor: 'black' | 'white';
 	children: React.ReactNode;
 	bottomDescription?: string;
+	isLoading?: boolean;
 };
 
 const LayoutOrbitControls = ({
@@ -26,9 +25,9 @@ const LayoutOrbitControls = ({
 	bottomTitleColor = 'white',
 	children,
 	bottomDescription = '',
+	isLoading = false,
 }: LayoutOrbitControlsProps) => {
 	const [OrbitControls, event] = useControls();
-	const [isLoading, setIsLoading] = useState(false);
 
 	return (
 		<SafeAreaView className='flex-1 bg-black p-5'>
@@ -54,9 +53,7 @@ const LayoutOrbitControls = ({
 
 					<Lights />
 
-					<Suspense fallback={<Trigger setIsLoading={setIsLoading} />}>
-						{children}
-					</Suspense>
+					{children}
 				</Canvas>
 			</View>
 
