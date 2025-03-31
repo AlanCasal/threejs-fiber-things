@@ -45,6 +45,21 @@ const LayoutOrbitControls = ({
 
 				<Canvas
 					gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
+					onCreated={state => {
+						// https://github.com/pmndrs/react-three-fiber/issues/2574#issuecomment-1280012205
+						const _gl: any = state.gl.getContext();
+
+						const pixelStorei = _gl.pixelStorei.bind(_gl);
+						_gl.pixelStorei = function (...args: any[]) {
+							const [parameter] = args;
+
+							switch (parameter) {
+								// expo-gl only supports the flipY param
+								case _gl.UNPACK_FLIP_Y_WEBGL:
+									return pixelStorei(...args);
+							}
+						};
+					}}
 				>
 					<OrbitControls
 						enableZoom={false}
