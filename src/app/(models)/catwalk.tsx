@@ -16,11 +16,11 @@ const Catwalk = () => {
 				bottomTitleColor='white'
 				statusBarStyle='light'
 			>
-				<ambientLight intensity={3} />
+				{/* <ambientLight intensity={3} /> */}
 
 				{/* <directionalLight
 					position={[10, 10, 10]}
-					args={['white', 2]}
+					args={['red', 1]}
 				/>
 				<directionalLight
 					position={[-10, -5, 10]}
