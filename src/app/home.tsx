@@ -21,8 +21,8 @@ const BUTTONS: ButtonType[] = [
 		className: 'bg-primary-600',
 	},
 	{
-		handlePress: () => router.push('/(models)/shoe'),
-		text: 'Shoe',
+		handlePress: () => router.push('/(models)/catwalk'),
+		text: 'Character - Catwalk',
 		className: 'bg-primary-700',
 	},
 ];

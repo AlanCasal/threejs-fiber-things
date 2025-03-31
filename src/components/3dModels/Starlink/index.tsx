@@ -10,8 +10,6 @@ import { GLTF } from 'three-stdlib';
 import { useSharedValue } from 'react-native-reanimated';
 import { useFrame } from '@react-three/fiber/native';
 
-const StarlinkModel = require('./Starlink.glb');
-
 type GLTFResult = GLTF & {
 	nodes: {
 		['01_objects002']: THREE.Mesh;
@@ -26,12 +24,13 @@ type GLTFResult = GLTF & {
 	};
 };
 
+const StarlinkGLB = require('./Starlink.glb');
 const ActionName = 'COMPOUND.001Action';
 
 const Starlink = (props: JSX.IntrinsicElements['group']) => {
 	const y = useSharedValue(0);
 	const group = useRef<THREE.Group>(null);
-	const { nodes, materials, animations } = useGLTF(StarlinkModel) as GLTFResult;
+	const { nodes, materials, animations } = useGLTF(StarlinkGLB) as GLTFResult;
 	const { actions } = useAnimations(animations, group);
 
 	useFrame(() => {
@@ -100,6 +99,6 @@ const Starlink = (props: JSX.IntrinsicElements['group']) => {
 };
 
 // Preload the model
-useGLTF.preload(StarlinkModel);
+useGLTF.preload(StarlinkGLB);
 
 export default Starlink;

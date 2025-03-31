@@ -1,5 +1,5 @@
 import { Suspense, useState } from 'react';
-import StarlinkModel from '@components/models/Starlink';
+import StarlinkModel from '@components/3dModels/Starlink';
 import LayoutOrbitControls from '@components/layout/LayoutOrbitControls';
 import Trigger from '@components/Trigger';
 
