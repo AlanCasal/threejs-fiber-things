@@ -3,27 +3,44 @@
 import { Float, Gltf, Text3D } from '@react-three/drei/native';
 import { Suspense } from 'react';
 import { INGREDIENTS, useSandwich } from 'src/hooks/useSandwich';
+import { animated, useSpring } from '@react-spring/three';
+import { GroupProps } from '@react-three/fiber';
 
 const fontPath = require('@/assets/fonts/Poppins_Bold.json');
 
 const INGREDIENT_SCALE = 3;
 const INGREDIENT_SCALE_Y = 5;
 
-interface IngredientProps {
+interface SpecificIngredientProps {
 	showPrice: boolean;
 	ingredient: {
 		id: number;
 		name: keyof typeof INGREDIENTS;
 	};
+	'position-y'?: number;
 }
 
-const Ingredient = ({ ingredient, showPrice, ...props }: IngredientProps) => {
-	const { removeIngredient, addedToCart } = useSandwich();
+type IngredientPropsCombined = SpecificIngredientProps & GroupProps;
+
+const Ingredient = ({
+	ingredient,
+	showPrice,
+	'position-y': positionYProp,
+	...props
+}: IngredientPropsCombined) => {
+	const { positionY } = useSpring({ positionY: positionYProp });
+	const { scale } = useSpring({ from: { scale: 0.5 }, to: { scale: 1 } });
+
+	const { addedToCart, removeIngredient } = useSandwich();
 
 	if (!ingredient) return null;
 
 	return (
-		<group {...props}>
+		<animated.group
+			{...props}
+			scale={scale}
+			position-y={positionY}
+		>
 			{showPrice && (
 				<Suspense fallback={null}>
 					<group
@@ -82,7 +99,7 @@ const Ingredient = ({ ingredient, showPrice, ...props }: IngredientProps) => {
 					scale-y={INGREDIENT_SCALE_Y + (ingredient.name === 'bread' ? 5 : 0)}
 				/>
 			</Float>
-		</group>
+		</animated.group>
 	);
 };
 
