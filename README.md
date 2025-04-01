@@ -52,3 +52,4 @@ npm run android
 - Thanks [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) for the wonderful tutorials
   - [Starlink](https://www.youtube.com/watch?v=iRavet_Zau8)
   - [3D character](https://www.youtube.com/watch?v=SP0O5o9BJVA&t=341s)
+- Thanks [Wawa Sensei](https://www.youtube.com/@WawaSensei) for the wonderful [animated sandwich tutorial](https://www.youtube.com/watch?v=oCU5j5P20To&t=63s)
