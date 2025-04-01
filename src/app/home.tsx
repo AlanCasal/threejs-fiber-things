@@ -27,7 +27,7 @@ const BUTTONS: ButtonType[] = [
 	},
 	{
 		handlePress: () => router.push('/(models)/sandwich'),
-		text: 'Food 🍔',
+		text: 'Sandwich 🥪',
 		className: 'bg-primary-200',
 	},
 ];

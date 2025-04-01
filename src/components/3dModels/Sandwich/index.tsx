@@ -4,7 +4,6 @@ import { Group } from 'three';
 import { useFrame } from '@react-three/fiber/native';
 import Ingredient from './Ingredient';
 import { useSandwich } from 'src/hooks/useSandwich';
-import { ContactShadows } from '@react-three/drei/native';
 
 const INGREDIENT_SPACING = 0.2;
 const INGREDIENT_SPACING_FINAL = 0.06;
@@ -36,12 +35,16 @@ const Sandwich = () => {
 				))}
 			</group>
 
-			<ContactShadows
+			{/*
+			ContactShadows are causing error:
+			TypeError: WeakMap key must be an Object
+			*/}
+			{/* <ContactShadows
 				blur={2}
 				scale={4}
 				position-y={-0.5}
 				opacity={0.6}
-			/>
+			/> */}
 		</group>
 	);
 };
