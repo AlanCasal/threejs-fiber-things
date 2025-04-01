@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable react/no-unknown-property */
-import { Gltf, Text3D } from '@react-three/drei/native';
+import { Float, Gltf, Text3D } from '@react-three/drei/native';
 import { Suspense } from 'react';
 import { INGREDIENTS, useSandwich } from 'src/hooks/useSandwich';
 
@@ -71,11 +71,17 @@ const Ingredient = ({ ingredient, showPrice, ...props }: IngredientProps) => {
 					</group>
 				</Suspense>
 			)}
-			<Gltf
-				src={INGREDIENTS[ingredient.name].src}
-				scale={INGREDIENT_SCALE}
-				scale-y={INGREDIENT_SCALE_Y + (ingredient.name === 'bread' ? 5 : 0)}
-			/>
+			<Float
+				floatingRange={addedToCart ? [0, 0] : [-0.01, 0.01]}
+				speed={addedToCart ? 0 : 4}
+				rotationIntensity={0.05}
+			>
+				<Gltf
+					src={INGREDIENTS[ingredient.name].src}
+					scale={INGREDIENT_SCALE}
+					scale-y={INGREDIENT_SCALE_Y + (ingredient.name === 'bread' ? 5 : 0)}
+				/>
+			</Float>
 		</group>
 	);
 };
