@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 // 3d stuff
-import { Canvas } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import useControls from 'r3f-native-orbitcontrols';
 import Loader from '@components/common/Loader';

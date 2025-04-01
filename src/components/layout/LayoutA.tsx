@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { View, Text } from 'react-native';
 import BackButton from '@components/common/BackButton';
-import { Canvas } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber/native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -33,7 +33,7 @@ const LayoutA = ({
 
 			<View className='flex-1'>
 				<Canvas
-					gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
+					gl={{ debug: { checkShaderErrors: false, onShaderError: null } }} // fix for gl.pixelStorei() support error
 				>
 					{children}
 				</Canvas>

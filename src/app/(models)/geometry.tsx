@@ -3,6 +3,7 @@ import LayoutA from '@components/layout/LayoutA';
 import { MeshProps, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
 import { Mesh } from 'three';
+
 const Box = (props: MeshProps) => {
 	const [isActive, setIsActive] = useState(false);
 	const boxRef = useRef<Mesh>(null);

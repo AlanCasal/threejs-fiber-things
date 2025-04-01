@@ -12,18 +12,23 @@ type ButtonType = {
 const BUTTONS: ButtonType[] = [
 	{
 		handlePress: () => router.push('/(models)/geometry'),
-		text: 'Simple geometry',
+		text: 'Simple geometry 📐',
 		className: 'bg-primary-500',
 	},
 	{
 		handlePress: () => router.push('/(models)/starlink'),
-		text: 'Starlink',
+		text: 'Starlink 📡',
 		className: 'bg-primary-600',
 	},
 	{
 		handlePress: () => router.push('/(models)/catwalk'),
-		text: 'Character - Catwalk',
+		text: 'Character - Catwalk 🧍🏼',
 		className: 'bg-primary-700',
+	},
+	{
+		handlePress: () => router.push('/(models)/food'),
+		text: 'Food 🍔',
+		className: 'bg-primary-200',
 	},
 ];
 
