@@ -28,7 +28,7 @@ const Box = (props: MeshProps) => {
 	);
 };
 
-const Geometry = () => {
+const GeometryScreen = () => {
 	return (
 		<LayoutA
 			bottomTitle='👆🏼 Tap a box !'
@@ -60,4 +60,4 @@ const Geometry = () => {
 	);
 };
 
-export default Geometry;
+export default GeometryScreen;

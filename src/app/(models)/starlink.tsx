@@ -1,9 +1,9 @@
 import { Suspense, useState } from 'react';
-import StarlinkModel from '@components/3dModels/Starlink';
+import Starlink from '@components/3dModels/Starlink';
 import LayoutOrbitControls from '@components/layout/LayoutOrbitControls';
 import Trigger from '@components/Trigger';
 
-const Starlink = () => {
+const StarlinkScreen = () => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	return (
@@ -15,12 +15,12 @@ const Starlink = () => {
 			isLoading={isLoading}
 		>
 			<Suspense fallback={<Trigger setIsLoading={setIsLoading} />}>
-				<StarlinkModel />
+				<Starlink />
 			</Suspense>
 		</LayoutOrbitControls>
 	);
 };
 
-export default Starlink;
+export default StarlinkScreen;
 
 // https://www.youtube.com/watch?v=iRavet_Zau8

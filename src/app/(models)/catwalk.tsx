@@ -2,10 +2,10 @@
 import { Suspense, useState } from 'react';
 import Loader from '@components/common/Loader';
 import Trigger from '@components/Trigger';
-import CatwalkModel from '@components/3dModels/Catwalk';
+import Catwalk from '@components/3dModels/Catwalk';
 import LayoutOrbitControls from '@components/layout/LayoutOrbitControls';
 
-const Catwalk = () => {
+const CatwalkScreen = () => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	return (
@@ -28,11 +28,11 @@ const Catwalk = () => {
 				/> */}
 
 				<Suspense fallback={<Trigger setIsLoading={setIsLoading} />}>
-					<CatwalkModel />
+					<Catwalk />
 				</Suspense>
 			</LayoutOrbitControls>
 		</>
 	);
 };
 
-export default Catwalk;
+export default CatwalkScreen;

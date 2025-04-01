@@ -26,7 +26,7 @@ const Ingredient = ({
 	ingredient,
 	showPrice,
 	'position-y': positionYProp,
-	...props
+	...restProps
 }: IngredientPropsCombined) => {
 	const { positionY } = useSpring({ positionY: positionYProp });
 	const { scale } = useSpring({ from: { scale: 0.5 }, to: { scale: 1 } });
@@ -37,7 +37,7 @@ const Ingredient = ({
 
 	return (
 		<animated.group
-			{...props}
+			{...restProps}
 			scale={scale}
 			position-y={positionY}
 		>

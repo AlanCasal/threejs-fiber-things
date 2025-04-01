@@ -6,7 +6,7 @@ import BottomUI from '@components/3dModels/Sandwich/BottomUI';
 import Sandwich from '@components/3dModels/Sandwich';
 import { Suspense } from 'react';
 
-const Food = () => {
+const SandwichScreen = () => {
 	return (
 		<>
 			<StatusBar style='light' />
@@ -31,4 +31,4 @@ const Food = () => {
 	);
 };
 
-export default Food;
+export default SandwichScreen;

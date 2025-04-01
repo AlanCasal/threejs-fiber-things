@@ -26,7 +26,7 @@ const BUTTONS: ButtonType[] = [
 		className: 'bg-primary-700',
 	},
 	{
-		handlePress: () => router.push('/(models)/food'),
+		handlePress: () => router.push('/(models)/sandwich'),
 		text: 'Food 🍔',
 		className: 'bg-primary-200',
 	},
