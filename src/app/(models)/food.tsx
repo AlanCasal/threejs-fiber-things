@@ -17,7 +17,7 @@ const Food = () => {
 				>
 					<color
 						attach='background'
-						args={['#512DA8']}
+						args={['#0286FF']}
 					/>
 
 					<Suspense fallback={null}>

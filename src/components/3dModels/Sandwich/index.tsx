@@ -11,6 +11,7 @@ const Sandwich = () => {
 			{ingredients.map((ingredient, index) => (
 				<Ingredient
 					key={ingredient.id + ingredient.name}
+					showPrice={index > 0 && index < ingredients.length - 1}
 					ingredient={ingredient}
 					position-y={index * INGREDIENT_SPACING}
 				/>

@@ -4,18 +4,18 @@ type ButtonProps = {
 	handlePress: () => void;
 	text: string;
 	textColor?: 'white' | 'black';
-	className?: NativeWindStyleProp;
+	buttonClassName?: NativeWindStyleProp;
 };
 
 const Button = ({
 	handlePress,
 	text,
-	className,
+	buttonClassName,
 	textColor = 'white',
 }: ButtonProps) => {
 	return (
 		<TouchableOpacity
-			className={`p-4 rounded-lg ${className}`}
+			className={`p-4 rounded-lg ${buttonClassName}`}
 			onPress={handlePress}
 		>
 			<Text

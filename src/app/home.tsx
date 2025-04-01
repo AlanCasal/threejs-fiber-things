@@ -45,7 +45,7 @@ const Home = () => {
 						key={button.text}
 						handlePress={button.handlePress}
 						text={button.text}
-						className={button.className}
+						buttonClassName={button.className}
 					/>
 				))}
 			</View>

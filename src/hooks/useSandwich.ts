@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { create } from 'zustand';
 import { useGLTF } from '@react-three/drei/native';
 
@@ -66,13 +67,15 @@ export const INGREDIENTS = {
 };
 
 // preload all ingredients
-Object.keys(INGREDIENTS).forEach(ingredient => {
-	useGLTF.preload(INGREDIENTS[ingredient as keyof typeof INGREDIENTS].src);
+Object.entries(INGREDIENTS).forEach(([, ingredientData]) => {
+	useGLTF.preload(ingredientData.src);
 });
 
 interface SandwichState {
 	ingredients: Array<{ id: number; name: keyof typeof INGREDIENTS }>;
 	total: number;
+	addedToCart: boolean;
+	setAddedToCart: (addedToCart: boolean) => void;
 	addIngredient: (ingredient: keyof typeof INGREDIENTS) => void;
 	removeIngredient: (ingredient: {
 		id: number;
@@ -92,6 +95,7 @@ export const useSandwich = create<SandwichState>(set => ({
 		},
 	],
 	total: 5,
+	addedToCart: false,
 	addIngredient: (ingredient: keyof typeof INGREDIENTS) =>
 		set((state: SandwichState) => ({
 			total: state.total + INGREDIENTS[ingredient].price,
@@ -115,4 +119,5 @@ export const useSandwich = create<SandwichState>(set => ({
 					ing.id !== ingredient.id
 			),
 		})),
+	setAddedToCart: (addedToCart: boolean) => set({ addedToCart }),
 }));
