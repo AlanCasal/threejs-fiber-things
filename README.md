@@ -13,13 +13,13 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/AlanCasal/threejs-fiber-things?style=for-the-badge&logo=github)](https://github.com/AlanCasal/threejs-fiber-things/commits/master)
 [![3D Playground](https://img.shields.io/badge/type-3D%20playground-0EA5E9?style=for-the-badge)](https://github.com/AlanCasal/threejs-fiber-things)
-[![Expo](https://img.shields.io/badge/expo-52-000020?style=for-the-badge&logo=expo)](https://expo.dev/)
 
 ### Core Stack
 
 [![TypeScript](https://img.shields.io/badge/typescript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React Native](https://img.shields.io/badge/react_native-0.76-20232A?style=for-the-badge&logo=react)](https://reactnative.dev/)
 [![React](https://img.shields.io/badge/react-18.3-149ECA?style=for-the-badge&logo=react)](https://react.dev/)
+[![Expo](https://img.shields.io/badge/expo-52-000020?style=for-the-badge&logo=expo)](https://expo.dev/)
 [![Expo Router](https://img.shields.io/badge/expo_router-4.0-111111?style=for-the-badge)](https://docs.expo.dev/router/introduction/)
 [![NativeWind](https://img.shields.io/badge/nativewind-4.1-38B2AC?style=for-the-badge)](https://www.nativewind.dev/)
 
